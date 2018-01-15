@@ -15,7 +15,8 @@ class Login extends Component {
   loginSumbit = () => {
     if(this.state.username == '123' && this.state.password == '123') {
       alert("登录成功！");
-      this.props.history.push('/about')
+      // this.props.history.push('/about')
+      this.props.history.push('/main');
     } else {
       alert("登录失败！,账号密码为123");
     }

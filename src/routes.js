@@ -5,6 +5,8 @@ import Login from './common/page/login/Login'
 import Admin from './common/page/about/about';
 import ReduxTodo from './common/page/reduxDemo/todoList';
 import Reat from './common/page/reduxDemo/reat';
+import Main from './common/page/main/main'
+
 
 // const About = ()=> (
 //   <div>
@@ -70,14 +72,15 @@ class Mecc extends Component{
 const routes = (
   <Router>
     <div className="container">
-    <Route exact path="/" component={Home}></Route>
-    <Route exact path="/login" component={Login}></Route>
-    <Route  path="/about" component={Admin}></Route>
-    <Route  path="/mecc" component={Mecc}></Route>
-    <Route path="/inbox" component={Inbox}></Route>
+      <Route exact path="/" component={Login}></Route>
+      <Route exact path="/login" component={Login}></Route>
+      <Route  path="/about" component={Admin}></Route>
+      <Route  path="/mecc" component={Mecc}></Route>
+      <Route path="/inbox" component={Inbox}></Route>
+      <Route path="/main" component={Main} />
       <Route path="/todo" component={ReduxTodo} />
       <Route path="/reat" component={Reat} />
-    {/* <Redirect from="*" to='/mecc'></Redirect> */}
+      {/* <Redirect from="*" to='/mecc'></Redirect> */}
     </div>
   </Router>
 )
