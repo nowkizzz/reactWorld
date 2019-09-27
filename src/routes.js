@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router,Link,Route,Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 // import { Route,Redirect } from 'react-router'
 import Login from './common/page/login/Login'
 import Admin from './common/page/about/about';
 import ReduxTodo from './common/page/reduxDemo/todoList';
 import Reat from './common/page/reduxDemo/reat';
 import Main from './common/page/main/main'
-
+import Editor from './common/page/editor/index.jsx'
 
 // const About = ()=> (
 //   <div>
@@ -14,7 +14,7 @@ import Main from './common/page/main/main'
 //   </div>
 // )
 
-const Home = ()=> (
+const Home = () => (
   <div>
     <h3>Home</h3>
   </div>
@@ -31,39 +31,39 @@ class Medd extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name:"nowki"
+      name: "nowki"
     }
   }
   render() {
     return (
       <div>
-      <p>{this.state.name}</p>
-      <p>{this.props.match.params.no}</p>
-      <p>{this.props.match.params.id}</p>
+        <p>{this.state.name}</p>
+        <p>{this.props.match.params.no}</p>
+        <p>{this.props.match.params.id}</p>
       </div>
     )
   }
 
-} 
+}
 
-const Inbox = ({ match}) => (
+const Inbox = ({ match }) => (
   <div>
     <h2>Topics</h2>
     <Link to="/inbox/messa/888">55</Link>
-    <br/>
+    <br />
     <Link to="/inbox/messa/7777">89888</Link>
-    <br/>
+    <br />
     <Link to="/inbox/messb/6666666666666">名字之一</Link>
     <Route path={`${match.url}/messa/:id`} component={Message}></Route>
     <Route path={`${match.url}/messb/:no`} component={Medd} />
   </div>
 )
 
-const Mebb = ( ()=> 
+const Mebb = (() =>
   <div>55555555555555</div>
 )
 
-class Mecc extends Component{
+class Mecc extends Component {
   render() {
     return (<div>888888888888</div>)
   }
@@ -74,12 +74,13 @@ const routes = (
     <div className="container">
       <Route exact path="/" component={Login}></Route>
       <Route exact path="/login" component={Login}></Route>
-      <Route  path="/about" component={Admin}></Route>
-      <Route  path="/mecc" component={Mecc}></Route>
+      <Route path="/about" component={Admin}></Route>
+      <Route path="/mecc" component={Mecc}></Route>
       <Route path="/inbox" component={Inbox}></Route>
       <Route path="/main" component={Main} />
       <Route path="/todo" component={ReduxTodo} />
       <Route path="/reat" component={Reat} />
+      <Route path="/editor" component={Editor} />
       {/* <Redirect from="*" to='/mecc'></Redirect> */}
     </div>
   </Router>
